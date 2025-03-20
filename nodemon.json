@@ -1,0 +1,9 @@
+{
+  "execMap": {
+  },
+  "watch": [
+    "dist"
+  ],
+  "events": {
+  }
+}

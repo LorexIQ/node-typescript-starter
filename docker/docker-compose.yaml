@@ -1,0 +1,17 @@
+services:
+  app:
+    container_name: "${PROJECT_NAME}-app"
+    restart: unless-stopped
+    env_file:
+      - .env
+    build:
+      context: ../.
+      dockerfile: ./docker/Dockerfile
+    networks:
+      - network
+    expose:
+      - "4000"
+
+networks:
+  network:
+    name: network

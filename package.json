@@ -1,0 +1,38 @@
+{
+  "name": "node-ts-app",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "keywords": [],
+  "main": ".engine/index.js",
+  "_moduleAliases": {
+    "@": "dist/src",
+    "@composables": "dist/.engine/composables",
+    "@root": "dist/.engine/root"
+  },
+  "scripts": {
+    "start": "node ./scripts/start.js",
+    "dev": "node scripts/dev.js",
+    "build": "node scripts/build.js",
+    "build:clean": "rimraf dist",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "log4js": "^6.9.1",
+    "module-alias": "^2.2.3",
+    "nodemon": "^3.1.6",
+    "reflect-metadata": "^0.2.2",
+    "tsyringe": "^4.8.0"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^3.7.1",
+    "@types/node": "^22.5.5",
+    "eslint": "^9.10.0",
+    "rimraf": "^6.0.1",
+    "ts-node": "^10.9.2",
+    "tsc-watch": "^6.2.0",
+    "typescript": "^5.6.2"
+  }
+}
