@@ -1,0 +1,28 @@
+model User {
+  id           Int       @id
+  firstName    String
+  languageCode Languages
+  role         Roles
+  isBot        Boolean
+  isPremium    Boolean
+
+  lastName     String?
+  username     String?
+  countInvites Int     @default(0)
+
+  inviteCodes InviteCode[]
+}
+
+model LastUserMessage {
+  messageId Int @id @unique
+  chatId    Int @unique
+}
+
+enum Languages {
+  ru
+}
+
+enum Roles {
+  admin
+  user
+}

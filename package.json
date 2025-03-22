@@ -15,24 +15,33 @@
     "dev": "node scripts/dev.js",
     "build": "node scripts/build.js",
     "build:clean": "rimraf dist",
+    "db:mig": "node ./scripts/db.js prisma migrate dev",
+    "db:gen": "node ./scripts/db.js prisma generate",
+    "db:push": "node ./scripts/db.js prisma db push",
+    "db:push:force": "node ./scripts/db.js prisma db push --force-reset",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix"
   },
   "dependencies": {
+    "@grammyjs/conversations": "^2.0.1",
+    "@prisma/client": "^6.5.0",
     "dotenv": "^16.4.5",
+    "grammy": "^1.35.0",
     "log4js": "^6.9.1",
     "module-alias": "^2.2.3",
     "nodemon": "^3.1.6",
     "reflect-metadata": "^0.2.2",
+    "tsx": "^4.19.3",
     "tsyringe": "^4.8.0"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^3.7.1",
-    "@types/node": "^22.5.5",
+    "@types/node": "^22.13.11",
     "eslint": "^9.10.0",
+    "prisma": "^6.5.0",
     "rimraf": "^6.0.1",
     "ts-node": "^10.9.2",
     "tsc-watch": "^6.2.0",
-    "typescript": "^5.6.2"
+    "typescript": "^5.8.2"
   }
 }

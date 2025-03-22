@@ -1,0 +1,2 @@
+-- AlterTable
+ALTER TABLE "InviteCode" ALTER COLUMN "updatedAt" SET DEFAULT CURRENT_TIMESTAMP;

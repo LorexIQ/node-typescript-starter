@@ -1,5 +1,7 @@
-import useLogger from '@composables/useLogger';
+import { loadCommands } from './commands';
+import { loadConversations } from './conversations';
 
 export function main() {
-  useLogger().log('App is running!');
+  loadConversations();
+  loadCommands();
 }

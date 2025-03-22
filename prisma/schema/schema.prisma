@@ -1,0 +1,25 @@
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["prismaSchemaFolder"]
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model InviteCode {
+  id        Int      @id @default(autoincrement())
+  ownerId   Int?
+  code      String   @unique
+  updatedAt DateTime @default(now()) @updatedAt
+
+  owner User? @relation(fields: [ownerId], references: [id])
+}
+
+model BanByCode {
+  tgId         Int      @id @unique
+  triesCode    Int      @default(0)
+  triesInvalid Int      @default(0)
+  updatedAt    DateTime @updatedAt
+}
